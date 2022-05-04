@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+    <meta charset="utf-8">
+    <title>
+        How to Change Background Color
+        of a Div on Mouse Move Over
+        using JavaScript ?
+    </title>
+  
+    <style>
+        .square {
+            position: absolute;
+            background: #E73C49;
+            width: 300px;
+            height: 300px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid;
+        }
+        
+    </style>
+</head>
+  
+<body>
+    <h2>Ejercicio 1 Session 14</h2>
+        <p>
+            Por último vamos a hacer un ejercicio que va a interactuar con un div en concreto.
+            El objetivo es crear un div cuadrado que cambie de color cuando hacen click sobre el y que cambie de forma a un círculo al hacer doble click
+        </p>
+       
+    <div class="square"></div>
+    
+    
+  
+    <script type="text/javascript">
+
+        
+
+        const color = () => {
+        let n = (Math.random() * 0xfffff * 1000000).toString(16);
+        return '#' + n.slice(0, 6);
+        };
+   
+  
+        document.querySelector(".square").addEventListener(
+                    "mouseenter", function () {
+  
+            document.querySelector(".square").style.background = color();
+        });
+
+        document.querySelector(".square").addEventListener(
+                    "dblclick", function () {
+  
+            document.querySelector(".square").style.borderRadius = "50%";
+        });
+    </script>
+</body>
+  
+</html>
