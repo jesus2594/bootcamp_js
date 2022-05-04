@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <h2>Ejercicio 2 Session 14</h2>
+    <p>
+        Vamos a realizar ahora una especie de "juego" en el que tendremos que adivinar las coordenadas de un lugar emblemático del mundo de entre tres opciones. La manera de seleccionar una respuesta será copiando las coordenadas.
+
+        Al copiar la línea correcta, un aviso los aparecerá en la pantalla mediante un alert, si no acertamos también lo notificará.
+    </p>
+    <h3>En cual continente esta china</h3>
+    <li>Europa</li>
+    <li>Oceania</li>
+    <li>Asia</li>
+
+    <div class="wrapper">
+        <div class="search-input">
+            <form id="form">
+                <input type="text" class="inpu" placeholder="Escriba la coordenada">
+                <input type="submit" class="btn">
+            </form>
+        </div>
+    </div>
+    
+      
+      <script>
+          const searchWrapper = document.querySelector(".search-input")
+          const form = document.querySelector("#form")
+            const inputBox = searchWrapper.querySelector(".inpu")
+            const inputSubmit = searchWrapper.querySelector(".btn")
+            form.onsubmit = (e) =>{
+            e.preventDefault()
+            let userData = inputBox.value
+            
+        
+
+        if(userData == "Asia"){
+            alert("Correcto")
+        }else{
+            alert("Respuesta incorrecta")
+        }
+      }
+      </script>
+</body>
+</html>
