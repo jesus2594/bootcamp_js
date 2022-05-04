@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+    <meta charset="utf-8">
+    <title>
+        How to Change Background Color
+        of a Div on Mouse Move Over
+        using JavaScript ?
+    </title>
+  
+    <style>
+        .rectangle {
+            position: absolute;
+            background: #E73C49;
+            width: 480px;
+            height: 250px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid;
+        }
+    </style>
+</head>
+  
+<body>
+    <h2>Ejercicio 1 Session 14</h2>
+        <p>
+            El objetivo es que al entrar en ese rectángulo con nuestro ratón, el fondo se establezca como blanco, mientras que cuando salga, este cambie a un color aleatorio
+            Para ello tendremos que crear tres funciones:
+        </p>
+        <ul>
+            <li>Una que genere y devuelva un código de color (con su almohadilla #)</li>
+            <li>Otra que aplique ese nuevo código de color al fondo</li>
+            <li>Por último una función que establezca el color en blanco de nuevo.</li>
+        </ul>
+    <div class="rectangle"></div>
+  
+    <script type="text/javascript">
+
+        
+
+        const color = () => {
+        let n = (Math.random() * 0xfffff * 1000000).toString(16);
+        return '#' + n.slice(0, 6);
+        };
+   
+  
+        document.querySelector(".rectangle").addEventListener(
+                    "mouseleave", function () {
+  
+            document.querySelector(".rectangle").style.background = color();
+        });
+
+        document.querySelector(".rectangle").addEventListener(
+                    "mouseenter", function () {
+  
+            document.querySelector(".rectangle").style.background = "#fff";
+        });
+    </script>
+</body>
+  
+</html>
