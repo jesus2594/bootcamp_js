@@ -1,0 +1,63 @@
+.contenedor {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    margin-top: 10px;
+    text-align: center;
+}
+
+
+.rotate{
+    height: 60px;
+    background-color: aqua;
+    width: 290px;
+    margin-top: 60px;
+    margin-bottom: 150px;
+    transition: all 1s ease-in 2s;
+}
+
+.rotate:hover {
+    cursor: wait;
+    transform: rotate(1turn);
+    transition: transform 10s;
+}
+
+.fade{
+    height: 60px;
+    background-color: coral;
+    width: 290px;
+    margin-top: 30px;
+    transition: all 1s ease-in 2s;
+}
+
+
+.fade:hover {
+    cursor: wait;
+    animation-name: container;
+    animation-duration: 1s;
+    animation-timing-function: ease-in cubic-bezier(.6, .02, .94, .66);
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes container {
+    0% {
+        transform: translateX(0px);
+    }
+    30% {
+        transform: translateX(-100px);
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(800px);
+    }
+}
