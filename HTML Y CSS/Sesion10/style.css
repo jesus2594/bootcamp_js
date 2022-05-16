@@ -1,0 +1,34 @@
+.container{
+    background-color: red;
+    width: 100%;
+    height: 300px;
+}
+
+img{
+    display: none;
+}
+
+
+
+video{
+    margin: 0 auto;
+    margin-top: 1em;
+    min-width: 640px;
+    height: 360px;
+}
+
+@media screen AND (max-width:800px) {
+    .container{
+        background-color: green;
+    }
+    video{
+        display: none;
+    }
+    img{
+        width: 100%;
+        margin: 1em;
+        display: initial;
+        margin: 1em 0;
+    }
+        
+}
