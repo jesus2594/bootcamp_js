@@ -1,0 +1,28 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+         
+        System.out.println(suma( 3, 5, 2));
+        Coche miCoche = new Coche();
+        //miCoche.incPuertas();
+        System.out.println("El numero de puertas que tiene el coche es " + miCoche.incPuertas());
+    }
+    
+        
+    
+    public static int suma(int a, int b, int c){
+        return a + b + c;
+    }
+    
+}
+
+class Coche{
+    public static int numPuertas = 4;
+
+    public static int incPuertas(){
+         return numPuertas + 1;
+        
+    }
+
+}
