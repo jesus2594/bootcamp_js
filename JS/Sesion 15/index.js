@@ -1,50 +1,47 @@
-let map;
+/* 
+Crea un nuevo proyecto de Node
 
-function iniciar(){
+- Crea un fichero index.html (utiliza el comando "!")*
 
-var boton=document.getElementById('obtener');
+- Crea un fichero index.js*
 
-boton.addEventListener('click', verLocalizacion, false);
+- Integra el fichero index.js en el html*
 
+- En el fichero index.js:*
+
+- Crea una variable con tu nombre*
+
+- Crea una variable con tu apellido*
+
+- Crea un objeto con tu nombre y tu apellido*
+
+- Almacena el objeto anterior en la SessionStorage*
+
+- Almacena el objeto anterior en la LocalStorage*
+
+- Crea una cookie que caduque en 2 minutos con los datos del objeto anterior*
+
+- Observa en Google Chrome cómo se almacenan los datos en la SessionStorage, LocalStorage y las cookies
+
+- Cierra el navegador, comenta las líneas que almacenan SessionStorage, LocalStorage y CookieStorage y vuelve a abrirlo
+
+- Observa cómo la SessionStorage está vacía
+
+- Observa cómo la LocalStorage sigue manteniendo el objeto que has almacenado antes de cerrar el navegador
+
+- Observa cómo la cookie sigue manteniendo el objeto que has almacenado antes, aunque ya está caducado
+
+*/
+let nombre = "jesus"
+let apellido = "marmol"
+
+const fullname = {
+    nombre, 
+    apellido 
 }
 
- 
-function verLocalizacion(){
-  navigator.geolocation.getCurrentPosition(verPosicion, verError);
-}
+// sessionStorage.setItem("fullname", fullname)
+// localStorage.setItem("fullname", fullname)
 
-
-function verPosicion(posicion){
-
-var ubicacion=document.getElementById('localizacion');
-
-
-map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: posicion.coords.latitude, lng: posicion.coords.longitude },
-    zoom: 8,
-  });
-
-
-
-}
-
-function verError(error){
-
-alert('Error: '+error.code+' '+error.message+ '\n\nPor favor compruebe que está conectado '+
-
-'a internet y habilite la opción permitir compartir ubicación física');
-
-}
-
-window.addEventListener('load', iniciar, false);
-
-
-
-function initMap() {
-  map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: -34.397, lng: 150.644 },
-    zoom: 8,
-  });
-}
-
-window.initMap = initMap;
+// const cook = new Date()
+// document.cookie = `fullname=${JSON.stringify(fullname)};expires=${new Date(cook.getTime() + 2 * 60000)}`
